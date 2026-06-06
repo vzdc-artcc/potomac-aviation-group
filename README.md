@@ -1,0 +1,137 @@
+# Potomac Aviation Group Technology
+
+TODO:
+
+- Homepage
+  - Navbar
+    - Logo
+    - About
+    - Divisions Potomac Air Charters | PXC · Potomac Air Cargo | PXT · Potomac Air Connection
+    - Staff
+    - Sign in
+    - Get Started
+  - Hero
+    - Current Membership Number
+    - Headline
+    - Subheadline
+    - Call to Action (Get Started)
+    - Some stats
+    - BG Image?
+  - Community thing
+  - FAQ?
+- About Page
+  - Mission Statement
+  - History
+  - Leadership
+  - Contact Info
+- Divisions Page
+  - PCT
+  - PXC
+  - PXT
+- Staff Page
+  - Profiles
+  - Bios
+- Contact Page
+  - Form
+  - Information
+- Sign In Page
+  - Form (with remember me button)
+  - Forgot Password
+  - Sign Up Link
+- Sign Up Page
+  - Form
+    - Display Name
+    - Email Adress
+    - Password (Hidden by default with button to view)
+    - Confirm Password (Hidden by default with button to view)
+  - Sign In Link
+
+- User Dashboard (Only authenticated, valid users)
+  Within each page, there will be a breadcrumb at the top with the category, then the page the user is on. No links, just text for the breadcrumb. Then under that will be the name of the page in large text. Then below that will be a breif discription of the page. Then the content of the page will be below that. The sidebar will be on the left, and the content will be on the right. The sidebar will have a list of categories, and when you click on a category, it will take you to that category's page. The content of each page will be different based on the category.
+  - Navbar
+    - Button to collaps side bar to small mode (When in small mode, clicking on each category will open a sub menu pop out to the side with the contents)
+    - Logo
+    - Search Bar
+    - Current Zulu time (Live updating) drop down to current local time
+    - Notifications (Bell Icon)
+    - User Profile (Drop down with profile, settings, sign out)
+  - Sidebar
+    - Home
+      - Welcome Back
+      - NOTAMs
+      - Challenge of the Month
+      - Leaderboards
+    - My Logbook
+      - Flight Log
+      - My Carrer Progress
+      - Achievements
+    - Crew Scheduling
+      - Schedule
+      - Breifing Page
+      - Route Builder
+      - Trip Generator
+      - Flight Planning
+    - Live Operations
+      - Live Map
+      - Weather
+      - VATSIM ATC
+    - Databases
+      - Aircraft 
+      - Airports 
+      - Routes
+      - Weather
+
+
+- API
+  - Tech:
+    - Rust with Actix Web for the backend
+    - PostgreSQL for the database
+    - JWT for authentication
+    - RESTful API design
+  - Requirements:
+    - 
+  - Endpoints:
+    This is just a general outline, we will add endpoints as we need to. I want to have logs for the API its self in the console but we also need a way that we can see logs of when users and admin update or change things via the API. We need to have good Access control lists and role mappings to each ACL. We also need to be able to version the api so have all/most endpoints start with /api/v1/ etc.
+
+    - Checks:
+      - /api/health
+      - /api/ready
+    - Auth
+      - POST /api/auth/signup
+      - POST /api/auth/signin
+      - POST /api/auth/signout
+      - POST /api/auth/refresh
+      - GET /api/auth/me
+      - POST /api/auth/forgot-password
+      - POST /api/auth/reset-password
+    - Admin
+      - GET /api/admin/users/audit (Or something similar)
+      - POST /api/admin/users/audit (Or something similar)
+      - GET /api/admin/logs
+    - Users
+      - GET /api/users
+      - GET /api/users/{id}
+      - PUT /api/users/{id}
+      - DELETE /api/users/{id}
+    - Logbook
+      - GET /api/logbook
+      - POST /api/logbook
+      - GET /api/logbook/{id}
+      - PUT /api/logbook/{id}
+      - DELETE /api/logbook/{id}
+    - Scheduling
+      - GET /api/scheduling
+      - POST /api/scheduling
+      - GET /api/scheduling/{id}
+      - PUT /api/scheduling/{id}
+      - DELETE /api/scheduling/{id}
+    - Operations
+      - GET /api/operations/live-map
+      - GET /api/operations/live
+      - GET /api/operations/weather
+      - GET /api/operations/vatsim-atc
+    - Databases
+      - GET /api/databases/aircraft
+      - GET /api/databases/airports
+      - GET /api/databases/routes
+      - GET /api/databases/weather
